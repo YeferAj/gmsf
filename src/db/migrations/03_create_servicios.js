@@ -15,10 +15,10 @@ module.exports = {
         type: Sequelize.TEXT
       },
       precio: {
-        type: Sequelize.DECIMAL(10, 2),
+        type: Sequelize.DECIMAL(10, 3),
         allowNull: false,
         validate: {
-          min: 0.01
+          min: 0.001
         }
       },
       estado: {

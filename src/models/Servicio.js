@@ -16,10 +16,10 @@ const Servicio = sequelize.define('Servicio', {
     type: DataTypes.TEXT
   },
   precio: {
-    type: DataTypes.DECIMAL(10, 2),
+    type: DataTypes.DECIMAL(10, 3),
     allowNull: false,
     validate: {
-      min: 0.01
+      min: 0.001
     }
   },
   estado: {
