@@ -1,0 +1,32 @@
+services:
+  - type: web
+    name:      
+    runtime: node                
+    buildCommand: npm install    
+    startCommand: npm start      
+    env: node                    
+    envVars:
+      - key: DB_HOST
+        fromDatabase:
+          name: gmsf  
+          property: connectionString
+      - key: DB_NAME
+        value: gmsf   
+      - key: DB_USER
+        fromDatabase:
+          name: gmsf
+          property: user
+      - key: DB_PASSWORD
+        fromDatabase:
+          name: gmsf
+          property: password 
+      - key: JWT_SECRET
+        generateValue: true
+      - key: PORT
+        value: 3000        
+
+databases:
+  - name: gmsf
+    plan: free  
+    databaseName: gmsf  
+    user: gym_admin      
