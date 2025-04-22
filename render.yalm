@@ -16,7 +16,7 @@ services:
         value: 3000        
 
 databases:
-  - name: gmsf
+  - name: gmsf_p6s0
     plan: free  
     databaseName: gmsf_p6s0  
     user: gym_admin      
