@@ -6,20 +6,8 @@ services:
     startCommand: npm start      
     env: node                    
     envVars:
-      - key: DB_HOST
-        fromDatabase:
-          name: gmsf  
-          property: connectionString
-      - key: DB_NAME
-        value: gmsf   
-      - key: DB_USER
-        fromDatabase:
-          name: gmsf
-          property: user
-      - key: DB_PASSWORD
-        fromDatabase:
-          name: gmsf
-          property: password 
+      - key: DB_SSL
+        value: true 
       - key: JWT_SECRET
         generateValue: true
       - key: NODE_ENV
@@ -30,5 +18,5 @@ services:
 databases:
   - name: gmsf
     plan: free  
-    databaseName: gmsf  
+    databaseName: gmsf_p6s0  
     user: gym_admin      
