@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-const sequelize = require('../db/index.js');
+const sequelize = require('./db/index');
 const rolRoutes = require('./routes/rolRoutes');
 const entrenadorRoutes = require('./routes/entrenadorRoutes');
 const servicioRoutes = require('./routes/servicioRoutes');
