@@ -11,7 +11,7 @@ exports.getAllEntrenadores = async (req, res) => {
 
 exports.createEntrenador = async (req, res) => {
   try {
-    const { nombre, especialidad, correo_electronico, telefono, numero_documento } = req.body;
+    const { nombre, especialidad, correo_electronico, telefono, numero_documento, estado } = req.body;
     
     const entrenador = await Entrenador.create({
       nombre,
@@ -19,7 +19,7 @@ exports.createEntrenador = async (req, res) => {
       correo_electronico,
       telefono,
       numero_documento,
-      estado: true
+      estado
     });
     
     res.status(201).json({
@@ -49,7 +49,7 @@ exports.getEntrenadorById = async (req, res) => {
 
 exports.updateEntrenador = async (req, res) => {
   try {
-    const { nombre, especialidad, correo_electronico, telefono, numero_documento } = req.body;
+    const { nombre, especialidad, correo_electronico, telefono, numero_documento, estado } = req.body;
     const entrenador = await Entrenador.findByPk(req.params.id);
     if (!entrenador) {
       return res.status(404).json({ error: 'Entrenador no encontrado' });
