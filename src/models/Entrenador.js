@@ -11,10 +11,6 @@ const sequelize = require('../db');
       type: DataTypes.STRING(100),
       allowNull: false
     },
-    fecha_registro: {
-      type: DataTypes.DATEONLY,
-      allowNull: false
-    },
     especialidad: {
       type: DataTypes.STRING(100),
       allowNull: false

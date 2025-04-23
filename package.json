@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node src/app.js",
     "dev": "nodemon src/app.js",
-    "migrate": "node db/migrations/runMigrations.js",
+    "migrate": "node src/db/migrations/runMigrations.js",
     "seed": "node db/seeds/runSeeds.js"
   },
   "dependencies": {
