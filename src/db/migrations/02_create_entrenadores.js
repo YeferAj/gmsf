@@ -10,15 +10,11 @@ module.exports = {
         type: Sequelize.STRING(100),
         allowNull: false
       },
-      fecha_registro: {
-        type: Sequelize.DATEONLY,
-        allowNull: false
-      },
       especialidad: {
         type: Sequelize.STRING(100),
         allowNull: false
       },
-      email: {
+      correo_electronico: {
         type: Sequelize.STRING(100),
         allowNull: false,
         unique: true

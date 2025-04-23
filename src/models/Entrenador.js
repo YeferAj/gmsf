@@ -19,7 +19,7 @@ const sequelize = require('../db');
       type: DataTypes.STRING(100),
       allowNull: false
     },
-    email: {
+    correo_electronico: {
       type: DataTypes.STRING(100),
       allowNull: false,
       unique: true,

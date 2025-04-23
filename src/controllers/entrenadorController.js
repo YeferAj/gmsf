@@ -11,13 +11,12 @@ exports.getAllEntrenadores = async (req, res) => {
 
 exports.createEntrenador = async (req, res) => {
   try {
-    const { nombre, fecha_registro, especialidad, email, telefono, numero_documento } = req.body;
+    const { nombre, especialidad, correo_electronico, telefono, numero_documento } = req.body;
     
     const entrenador = await Entrenador.create({
       nombre,
-      fecha_registro,
       especialidad,
-      email,
+      correo_electronico,
       telefono,
       numero_documento,
       estado: true
@@ -50,15 +49,14 @@ exports.getEntrenadorById = async (req, res) => {
 
 exports.updateEntrenador = async (req, res) => {
   try {
-    const { nombre, fecha_registro, especialidad, email, telefono, numero_documento } = req.body;
+    const { nombre, especialidad, correo_electronico, telefono, numero_documento } = req.body;
     const entrenador = await Entrenador.findByPk(req.params.id);
     if (!entrenador) {
       return res.status(404).json({ error: 'Entrenador no encontrado' });
     }
     entrenador.nombre = nombre || entrenador.nombre;
-    entrenador.fecha_registro = fecha_registro || entrenador.fecha_registro;
     entrenador.especialidad = especialidad || entrenador.especialidad;
-    entrenador.email = email || entrenador.email;
+    entrenador.correo_electronico = correo_electronico || entrenador.correo_electronico;
     entrenador.telefono = telefono || entrenador.telefono;
     entrenador.numero_documento = numero_documento || entrenador.numero_documento;
     entrenador.estado = estado !== undefined ? estado : entrenador.estado;
