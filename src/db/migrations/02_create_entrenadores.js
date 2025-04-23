@@ -18,6 +18,20 @@ module.exports = {
         type: Sequelize.STRING(100),
         allowNull: false
       },
+      email: {
+        type: Sequelize.STRING(100),
+        allowNull: false,
+        unique: true
+      },
+      telefono: {
+        type: Sequelize.STRING(20),
+        allowNull: false
+      },
+      numero_documento: {
+        type: Sequelize.STRING(20),
+        allowNull: false,
+        unique: true
+      },
       estado: {
         type: Sequelize.BOOLEAN,
         defaultValue: true
